@@ -43,13 +43,11 @@ O curso foi ministrado pelo [Diego Fernandes](https://github.com/diego3g)
 <br></br>
 
 <h2>
-    <img alt="interface-mobile" title="interface-mobile" src="https://res.cloudinary.com/vinicius998609604/image/upload/v1585589970/Semana%20OmniStack%2011.0%20-%20BE%20THE%20HERO/Be_The_Hero_-_OmniStack_11_oqjedz.svg" /> 
+  <img alt="interface-web" title="interface-web" src="https://res.cloudinary.com/vinicius998609604/image/upload/v1585585297/Semana%20OmniStack%2011.0%20-%20BE%20THE%20HERO/IMB_IVYV68_meifvt.gif" width="1000"/>
 </h2>
 
-<h2>
-  <img alt="interface-web" title="interface-web" src="https://res.cloudinary.com/vinicius998609604/image/upload/v1585585297/Semana%20OmniStack%2011.0%20-%20BE%20THE%20HERO/IMB_IVYV68_meifvt.gif" width="850"/>
-  <img alt="interface-web" title="interface-web" src="https://res.cloudinary.com/vinicius998609604/image/upload/v1585596424/Semana%20OmniStack%2011.0%20-%20BE%20THE%20HERO/Be_The_Hero_-_OmniStack_11_1_h4ejjc.svg" />
-</h2>
+-  Link para acessar as telas da [Interface Mobile](https://res.cloudinary.com/vinicius998609604/image/upload/v1585589970/Semana%20OmniStack%2011.0%20-%20BE%20THE%20HERO/Be_The_Hero_-_OmniStack_11_oqjedz.svg) 
+-  Link para acessar as telas da [Interface Web](https://res.cloudinary.com/vinicius998609604/image/upload/v1585596424/Semana%20OmniStack%2011.0%20-%20BE%20THE%20HERO/Be_The_Hero_-_OmniStack_11_1_h4ejjc.svg)
 
 ## :rocket: Tecnologias
 
