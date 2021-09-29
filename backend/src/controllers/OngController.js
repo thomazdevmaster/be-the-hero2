@@ -12,6 +12,9 @@ module.exports = {
     const { name, email, whatsapp, city, uf } = request.body;
 
     const id = generateUniqueId();
+    
+    console.log(id);
+    let numero = 10;
 
     await connection('ongs').insert({
         id,
