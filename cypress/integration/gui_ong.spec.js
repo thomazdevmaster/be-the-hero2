@@ -12,7 +12,7 @@ const  generateRandomString = (num) => {
 }
 
 it('', () => {
-    cy.visit('http://localhost:3000/');
+    cy.visit('http://10.5.0.5:3000/');
     cy.get('.back-link').click();
     
     let ong = generateRandomString(30);
@@ -33,5 +33,5 @@ it('', () => {
 
     cy.get('.button').click();
 
-    cy.get('h1').should('contain.text', 'Faça seu logon');
+    cy.contains('Faça seu logon').should('contain.text', 'Faça seu logon');
 });
