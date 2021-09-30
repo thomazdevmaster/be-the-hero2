@@ -1,0 +1,94 @@
+version: '2'
+
+services:
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    user: root
+    container_name: jenkins
+    volumes:
+       - jenkins_data:/var/jenkins_home
+       - dados_front:/var/dados_front
+       - dados_back:/var/dados_back
+    networks:
+      rede:
+        ipv4_address: 10.5.0.2
+    ports:
+      - '8080:8080'
+      - '50000:50000'
+
+  app:
+    build: ./frontend/
+    container_name: beTheHero
+    networks:
+      rede:
+        ipv4_address: 10.5.0.5
+    ports:
+      - '3000:3000'
+    volumes:
+      - dados_front:/app
+
+  app2:
+    build: ./backend/
+    container_name: backend
+    networks:
+      rede:
+        ipv4_address: 10.5.0.6
+    ports:
+      - '3333:3333'
+    volumes:
+      - dados_back:/app
+
+  sonarqube:
+    image: sonarqube:9.1.0-community
+    container_name: sonarqube
+    depends_on: 
+      - db
+    volumes:
+      - sonarqube_conf:/opt/sonarqube/conf
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+    networks:
+      rede:
+        ipv4_address: 10.5.0.3
+    ports:
+      - '9000:9000'
+    environment:
+      - sonar.jdbc.username=sonar
+      - sonar.jdbc.password=sonar
+      - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
+
+  db:
+    image: postgres
+    container_name: postgres
+    networks:
+      rede:
+        ipv4_address: 10.5.0.4
+    ports:
+      - '55432:5432'
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=sonar
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+
+networks:
+  rede:
+    driver: bridge
+    ipam:
+      config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
+
+volumes:
+  jenkins_data:
+  dados_front:
+  dados_back:
+  sonarqube_conf:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_bundled-plugins:
+  postgresql:
+  postgresql_data:
