@@ -33,5 +33,5 @@ it('', () => {
 
     cy.get('.button').click();
 
-    cy.contains('Faça seu logon').should('contain.text', 'Faça seu logon');
+    cy.contains('Faça seu logon').should('contain.text', 'Faça seu logon1111');
 });
