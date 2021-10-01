@@ -1,7 +1,4 @@
 pipeline {
-docker {
-      image 'cypress/base:10'
-    }
 agent any
     options { timestamps() }
 
