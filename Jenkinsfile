@@ -3,12 +3,6 @@ agent any
     options { timestamps() }
 
     stages {
-         stage('verificando repositorio'){
-            steps{
-                git 'https://github.com/vinicius-pimenta/be-the-hero.git'
-            }
-        }
-        
         stage('teste unitario - backend'){
             steps{
                 dir('backend'){
