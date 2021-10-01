@@ -24,3 +24,4 @@ npm-debug.*
 web-build/
 web-report/
 .DS_Store
+**/package-lock.json
