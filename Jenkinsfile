@@ -67,6 +67,7 @@ agent any
                 nodejs(nodeJSInstallationName: 'node14') {
                     ansiColor('css') {
                         sh 'npm install'
+                        sh 'npm install cypress'
                         sh 'npx cypress run'
                     }
                 }
