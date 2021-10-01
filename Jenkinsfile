@@ -79,7 +79,7 @@ agent any
             steps{
                 nodejs(nodeJSInstallationName: 'node14') {
                     ansiColor('xterm') {
-                        sh 'apt-get update && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb'
+                        sh 'apt-get update -y && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y'
                         sh 'npm install'
                         sh 'npx cypress run'
                     }
