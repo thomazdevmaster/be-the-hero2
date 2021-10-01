@@ -26,11 +26,11 @@ agent any
             }
         }
         
-        stage('analise de cÃ³digo - sonar'){
+        stage('analise de codigo - sonar'){
             steps{
                 withSonarQubeEnv('sonar') {
                     nodejs(nodeJSInstallationName: 'node14') {
-                        sh 'sonar-scanner -Dsonar.projectKey=be-the-hero -Dsonar.sources=. -Dsonar.host.url=http://10.5.0.3:9000 -Dsonar.login=dfceaadc37950594b87877a0cedf3ecfa3c2df98'    
+                        sh 'sonar-scanner -Dsonar.projectKey=be-the-hero -Dsonar.sources=. -Dsonar.host.url=http://10.5.0.3:9000 -Dsonar.login=dfceaadc37950594b87877a0cedf3ecfa3c2df98 -Dsonar.exclusions=tests/**'    
                     }
                     
                 }
