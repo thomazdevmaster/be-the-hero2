@@ -1,10 +1,9 @@
 pipeline {
-docker {
-      image 'cypress/base:10'
-    }
 agent any
     options { timestamps() }
-
+    docker {
+      image 'cypress/base:10'
+    }
     stages {
         stage('teste unitario - backend'){
             steps{
@@ -90,5 +89,6 @@ agent any
                 sh 'npm ci'
                 sh "npm run test:ci:record"
             }
+        }
     }
 }
