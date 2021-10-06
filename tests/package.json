@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --headless --env allure=true",
+    "allure:gen": "allure generate allure-results",
+    "allure:open": "allure open allure-report",
+    "allure:clear": "(if exist allure-report rd allure-report /s /q) & (if exist allure-results rd allure-results /s /q)",
+    "test": "(npm run allure:clear) & (npm run cy:run) & (npm run allure:gen) & (npm run allure:open)",
+    "cy:test": "(npm run allure:clear) & (npm run cy:run) & (npm run allure:gen)"
   },
   "keywords": [],
   "author": "",
